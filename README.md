@@ -4,6 +4,8 @@ Vehicle classification is a critical component of Intelligent Traffic Systems (I
 
 # Project Objective
 •  The goal of this project is to classify five distinct types of vehicles.
+
 •  Various machine learning and deep learning models were applied, including: Support Vector Machine (SVM), k-nearest neighbor (k-NN), Random Forest, Ensemble Learning (Stacking and Voting) Convolutional Neural Network (CNN), Fully connected neural network
+
 •  Dataset: The dataset used can be accessed here.
 
