@@ -25,6 +25,8 @@ This project involved several key steps to classify five distinct types of vehic
 # Conlusion
 The project successfully classified vehicles, with machine learning models like SVM and Random Forest surpassing 95% accuracy. The stacking model achieved 99.37%, while CNN reached 96.87%. Hyperparameter tuning improved model performance, and transfer learning could enhance future deep learning results.
 
+# Contact
+For any questions or inquiries, please contact evitanegara@gmail.com 
 
 
 
