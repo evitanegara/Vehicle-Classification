@@ -3,7 +3,6 @@
 This project applies traditional machine learning and deep learning approaches to the problem of multi-class image classification, focusing on vehicle identification, a critical component of Intelligent Traffic Systems (ITS). The ability to accurately classify vehicle types plays a key role in optimizing toll systems, traffic monitoring, and parking utilization in smart cities. Using a dataset of 4,356 vehicle images across five classes (sedan, pick-up, SUV, hatchback, and others), the project evaluates handcrafted feature-based machine learning models (SVM, KNN, Random Forest, Voting, Stacking) and deep learning architectures (Fully Connected Neural Network, CNN). The study highlights the impact of feature engineering, data augmentation, and model tuning on classification accuracy, generalization, and real-world deployment potential.
 
 ## Dataset Overview
-
 - Source: [Mendeley Data – Vehicle Classification Dataset](https://data.mendeley.com/datasets/htsngg9tpc/3)
 - Location: Captured at Loei Rajabhat University, Thailand
 - Volume: 4,356 labeled vehicle images
