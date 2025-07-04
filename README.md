@@ -39,7 +39,7 @@ This project demonstrates how handcrafted features such as HOG, LBP, LPQ, and Ga
   - Random rotation between -15° and 15°
 - Applied augmentation only to training data to avoid test leakage
   <p align="center">
-  <img src="https://github.com/user-attachments/assets/0527a4f6-1197-47e0-bb78-32f8b41bdaeb" alt="Model 2 Forecast" width="500"/>
+  <img src="https://github.com/user-attachments/assets/0527a4f6-1197-47e0-bb78-32f8b41bdaeb" alt="Model 2 Forecast" width="700"/>
 </p>
 
 ### Dataset Splitting
