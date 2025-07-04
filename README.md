@@ -19,7 +19,7 @@ This project applies traditional machine learning and deep learning approaches t
 
 
 ## Executive Summary
-This project demonstrates how handcrafted features such as HOG, LBP, LPQ, and Gabor can be leveraged to outperform deep learning models in small- to medium-scale image datasets. The best-performing model was the Stacking Classifier (Accuracy: 99.37%), followed by KNN (99.00%) and the Voting Classifier (98.60%). CNNs reached 96.87% accuracy, clearly outperforming the Fully Connected Neural Network (74.32%) but falling short of feature based models due to limited data. Data augmentation (brightness and rotation), stratified K-Fold cross-validation, and hyperparameter tuning significantly enhanced model performance. The results emphasize that in scenarios with limited training data, machine learning paired with strong feature engineering can outperform even deep learning architectures.
+This project demonstrates how handcrafted features such as HOG, LBP, LPQ, and Gabor can be leveraged to outperform deep learning models in small to medium scale image datasets. The best performing model was the Stacking Classifier (Accuracy: 99.37%), followed by KNN (99.00%) and the Voting Classifier (98.60%). CNNs reached 96.87% accuracy, clearly outperforming the Fully Connected Neural Network (74.32%) but falling short of feature based models due to limited data. Data augmentation (brightness and rotation), stratified K-Fold cross-validation, and hyperparameter tuning significantly enhanced model performance. The results emphasize that in scenarios with limited training data, machine learning paired with strong feature engineering can outperform even deep learning architectures.
 
 ## Project Workflow
 ### Data Import and Feature Engineering
@@ -40,14 +40,12 @@ This project demonstrates how handcrafted features such as HOG, LBP, LPQ, and Ga
 - Applied augmentation only to training data to avoid test leakage
   ![image](https://github.com/user-attachments/assets/0527a4f6-1197-47e0-bb78-32f8b41bdaeb)
 
-
 ### Dataset Splitting
 - Performed an 80/20 train-test split
 - Used Stratified K-Fold cross-validation (k = 10) to maintain class balance
 - Augmentation effectively doubled the size of the training set
 
 ### Model Building and Tuning
-
 ### Machine Learning
 - Trained the following models using handcrafted features:
   - Support Vector Machine (SVM)
@@ -84,7 +82,6 @@ This project demonstrates how handcrafted features such as HOG, LBP, LPQ, and Ga
 
   
 ## Highlights
-
 - Feature-based machine learning models outperformed deep learning approaches  
   Models using HOG, LPQ, and LBP achieved over 98% accuracy, outperforming CNNs due to effective manual feature extraction.
 
@@ -102,7 +99,6 @@ This project demonstrates how handcrafted features such as HOG, LBP, LPQ, and Ga
 
 
 ## Key Takeaways
-
 - Feature engineering is critical  
   For small to moderately sized datasets, handcrafted features like HOG, Gabor, and LBP significantly boost performance.
 
@@ -117,7 +113,6 @@ This project demonstrates how handcrafted features such as HOG, LBP, LPQ, and Ga
 
 - Model selection depends on data structure  
   CNNs are well-suited for large-scale, raw image datasets, while traditional ML models perform best when paired with meaningful, engineered features.
-
 
 
 # Contact
