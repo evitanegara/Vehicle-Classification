@@ -94,10 +94,15 @@ This project demonstrates how handcrafted features such as HOG, LBP, LPQ, and Ga
 
 ## Key Takeaways
 - Feature Engineering Drives Performance : Machine learning models like KNN, SVM, and Random Forest performed exceptionally well due to the use of handcrafted features (HOG, LBP, LPQ, Gabor, color histograms), capturing shape, texture, and color with high fidelity.
+  
 - Stacking and Voting Boost Reliability : Ensemble techniques significantly improved prediction robustness and accuracy. The Stacking Classifier was the top performer by combining the strengths of multiple base models, while Voting offered stability and reduced misclassifications.
+  
 - CNNs Excel with Augmentation : Despite a relatively small dataset, CNNs learned spatial patterns effectively through convolutional layers, and augmentation techniques (rotation, brightness adjustment) enhanced generalization to unseen data.
+  
 - Model Choice Should Align with Data : Machine learning models outperformed deep learning due to the effectiveness of manual feature extraction. For smaller datasets, traditional ML paired with strong features is often more powerful than end-to-end deep learning.
+  
 - FCNNs Lack Spatial Awareness : The Fully Connected Neural Network underperformed, highlighting the importance of spatial feature handling for image-based tasks. CNNs' architectural advantage in spatial learning made them far more suitable for this task.
+  
 - Cross-Validation Ensures Generalization: The use of Stratified K-Fold and GridSearchCV allowed robust hyperparameter tuning, helping models generalize better and avoid overfitting, even with class imbalance and limited data.
 
 # Contact
