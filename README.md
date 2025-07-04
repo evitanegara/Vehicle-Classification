@@ -84,38 +84,21 @@ This project demonstrates how handcrafted features such as HOG, LBP, LPQ, and Ga
 
   
 ## Highlights
-- Feature-based machine learning models outperformed deep learning approaches  
-  Models using HOG, LPQ, and LBP achieved over 98% accuracy, outperforming CNNs due to effective manual feature extraction.
-
-- CNNs remained competitive  
-  Despite the limited dataset size, CNNs achieved 96.87% accuracy by learning local and global spatial hierarchies.
-
-- Stacking was the best overall model  
-  Achieved 99.37% accuracy with consistent sensitivity and specificity, making it the most reliable approach.
-
-- KNN combined simplicity with high performance  
-  Delivered 99% accuracy when paired with robust feature sets, showcasing its effectiveness in well-engineered pipelines.
-
-- FCNN showed limitations  
-  Struggled due to lack of spatial awareness, which CNNs handled better through convolutional learning mechanisms.
-
+- Stacking Classifier achieved the highest overall accuracy at 99.37%, offering the most reliable classification performance across all vehicle types.
+- K-Nearest Neighbor (KNN) delivered strong results with 99.00% accuracy, benefiting from robust handcrafted features like HOG and LPQ.
+- Voting Classifier reached 98.60% accuracy, effectively balancing prediction stability and class generalization.
+- Random Forest maintained high performance at 98.00%, especially effective when paired with Gabor filters and color histograms.
+- CNN was the top-performing deep learning model, achieving 96.87% accuracy through effective spatial feature learning and augmentation techniques
+- SVM achieved 94.00% accuracy, demonstrating solid generalization with well-tuned polynomial and RBF kernels.
+- Fully Connected Neural Network (FCNN) showed the weakest performance at 74.32%, limited by its inability to capture spatial hierarchies in image data.
 
 ## Key Takeaways
-- Feature engineering is critical  
-  For small to moderately sized datasets, handcrafted features like HOG, Gabor, and LBP significantly boost performance.
-
-- Ensemble models Improve Result 
-  Voting and Stacking classifiers leverage multiple base learners, improving both accuracy and model stability.
-
-- CNNs require more data  
-  Deep learning approaches can rival or surpass traditional models when enough data and augmentation are available, but tend to underperform on limited datasets.
-
-- Augmentation and cross-validation improve generalization  
-  Techniques like brightness adjustments, random rotations, and stratified K-Fold splitting helped mitigate overfitting.
-
-- Model selection depends on data structure  
-  CNNs are well-suited for large-scale, raw image datasets, while traditional ML models perform best when paired with meaningful, engineered features.
-
+- Feature Engineering Drives Performance : Machine learning models like KNN, SVM, and Random Forest performed exceptionally well due to the use of handcrafted features (HOG, LBP, LPQ, Gabor, color histograms), capturing shape, texture, and color with high fidelity.
+- Stacking and Voting Boost Reliability : Ensemble techniques significantly improved prediction robustness and accuracy. The Stacking Classifier was the top performer by combining the strengths of multiple base models, while Voting offered stability and reduced misclassifications.
+- CNNs Excel with Augmentation : Despite a relatively small dataset, CNNs learned spatial patterns effectively through convolutional layers, and augmentation techniques (rotation, brightness adjustment) enhanced generalization to unseen data.
+- Model Choice Should Align with Data : Machine learning models outperformed deep learning due to the effectiveness of manual feature extraction. For smaller datasets, traditional ML paired with strong features is often more powerful than end-to-end deep learning.
+- FCNNs Lack Spatial Awareness : The Fully Connected Neural Network underperformed, highlighting the importance of spatial feature handling for image-based tasks. CNNs' architectural advantage in spatial learning made them far more suitable for this task.
+- Cross-Validation Ensures Generalization: The use of Stratified K-Fold and GridSearchCV allowed robust hyperparameter tuning, helping models generalize better and avoid overfitting, even with class imbalance and limited data.
 
 # Contact
 For any questions or inquiries, please contact evitanegara@gmail.com 
