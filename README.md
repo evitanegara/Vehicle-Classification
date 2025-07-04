@@ -19,7 +19,7 @@ This project applies traditional machine learning and deep learning approaches t
 
 
 ## Executive Summary
-This project demonstrates how handcrafted features such as HOG, LBP, LPQ, and Gabor can be leveraged to outperform deep learning models in small- to medium-scale image datasets. The best-performing model was the Stacking Classifier (Accuracy: 99.37%), followed by KNN (99.00%) and the Voting Classifier (98.60%). CNNs reached 96.87% accuracy, clearly outperforming the Fully Connected Neural Network (74.32%) but falling short of feature-based models due to limited data. Data augmentation (brightness and rotation), stratified K-Fold cross-validation, and hyperparameter tuning significantly enhanced model performance. The results emphasize that in scenarios with limited training data, machine learning paired with strong feature engineering can outperform even deep learning architectures.
+This project demonstrates how handcrafted features such as HOG, LBP, LPQ, and Gabor can be leveraged to outperform deep learning models in small- to medium-scale image datasets. The best-performing model was the Stacking Classifier (Accuracy: 99.37%), followed by KNN (99.00%) and the Voting Classifier (98.60%). CNNs reached 96.87% accuracy, clearly outperforming the Fully Connected Neural Network (74.32%) but falling short of feature based models due to limited data. Data augmentation (brightness and rotation), stratified K-Fold cross-validation, and hyperparameter tuning significantly enhanced model performance. The results emphasize that in scenarios with limited training data, machine learning paired with strong feature engineering can outperform even deep learning architectures.
 
 ## Project Workflow
 ### Data Import and Feature Engineering
@@ -38,6 +38,8 @@ This project demonstrates how handcrafted features such as HOG, LBP, LPQ, and Ga
   - Brightness adjustment (range: 0.5 to 2.0)
   - Random rotation between -15° and 15°
 - Applied augmentation only to training data to avoid test leakage
+  ![image](https://github.com/user-attachments/assets/0527a4f6-1197-47e0-bb78-32f8b41bdaeb)
+
 
 ### Dataset Splitting
 - Performed an 80/20 train-test split
@@ -68,6 +70,18 @@ This project demonstrates how handcrafted features such as HOG, LBP, LPQ, and Ga
   - Fully connected neural network with multiple dense layers
   - Tuned for optimal learning rate and number of hidden units
 - Applied Dropout and BatchNormalization to reduce overfitting and stabilize training
+
+### Model Performance Summary
+  | Model               | Accuracy (%) |
+|--------------------|--------------|
+| Stacking Classifier | **99.37**    |
+| K-Nearest Neighbor  | 99.00        |
+| Voting Classifier   | 98.60        |
+| Random Forest       | 98.00        |
+| SVM                 | 94.00        |
+| CNN                 | 96.87        |
+| FCNN                | 74.32        |
+
   
 ## Highlights
 
@@ -86,14 +100,13 @@ This project demonstrates how handcrafted features such as HOG, LBP, LPQ, and Ga
 - FCNN showed limitations  
   Struggled due to lack of spatial awareness, which CNNs handled better through convolutional learning mechanisms.
 
----
 
-## 🧠 Key Takeaways
+## Key Takeaways
 
 - Feature engineering is critical  
   For small to moderately sized datasets, handcrafted features like HOG, Gabor, and LBP significantly boost performance.
 
-- Ensemble models shine  
+- Ensemble models Improve Result 
   Voting and Stacking classifiers leverage multiple base learners, improving both accuracy and model stability.
 
 - CNNs require more data  
