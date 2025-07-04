@@ -38,7 +38,9 @@ This project demonstrates how handcrafted features such as HOG, LBP, LPQ, and Ga
   - Brightness adjustment (range: 0.5 to 2.0)
   - Random rotation between -15° and 15°
 - Applied augmentation only to training data to avoid test leakage
-  ![image](https://github.com/user-attachments/assets/0527a4f6-1197-47e0-bb78-32f8b41bdaeb)
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/0527a4f6-1197-47e0-bb78-32f8b41bdaeb" alt="Model 2 Forecast" width="500"/>
+</p>
 
 ### Dataset Splitting
 - Performed an 80/20 train-test split
