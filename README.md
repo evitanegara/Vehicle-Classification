@@ -1,29 +1,111 @@
-# Business Understanding
- 
-Vehicle classification is a critical component of Intelligent Traffic Systems (ITS), contributing to the efficiency of smart cities by improving traffic management, reducing congestion, and enhancing road safety. Accurately identifying vehicle types helps optimize toll collection, traffic flow monitoring, and parking lot utilization.
-
-# Project Objective
-- The goal of this project is to classify five distinct types of vehicles.
-- Various machine learning and deep learning models were applied, including: Support Vector Machine (SVM), k-nearest neighbor (k-NN), Random Forest, Ensemble Learning (Stacking and Voting) Convolutional Neural Network (CNN), Fully connected neural network
--  Dataset:  [Access the Dataset here](https://data.mendeley.com/datasets/htsngg9tpc/3)
-
+# Vehicle Classification for Intelligent Traffic Systems Using Machine Learning and Deep Learning
 # Project Overview
-This project involved several key steps to classify five distinct types of vehicles:
-- **Data Import and Feature Extraction**: Imported the dataset and used libraries like NumPy, OpenCV, and Sklearn. Employed techniques like HOG, color histograms, LBP, LPQ, and Gabor features for vehicle classification.
-- **Data Splitting**: Split the dataset into training (80%) and testing (20%) sets for model evaluation.
-- **Pre-processing and Data Augmentation**: Resized images, converted them to grayscale, and applied augmentation (brightness adjustment and rotation).
-- **Model Training and Evaluation**: Trained models including SVM, k-NN, CNN, and FCNN. Hyperparameter tuning using GridSearchCV was performed, and the models were evaluated using accuracy, precision, and recall metrics.
+This project applies traditional machine learning and deep learning approaches to the problem of multi-class image classification, focusing on vehicle identification, a critical component of Intelligent Traffic Systems (ITS). The ability to accurately classify vehicle types plays a key role in optimizing toll systems, traffic monitoring, and parking utilization in smart cities. Using a dataset of 4,356 vehicle images across five classes (sedan, pick-up, SUV, hatchback, and others), the project evaluates handcrafted feature-based machine learning models (SVM, KNN, Random Forest, Voting, Stacking) and deep learning architectures (Fully Connected Neural Network, CNN). The study highlights the impact of feature engineering, data augmentation, and model tuning on classification accuracy, generalization, and real-world deployment potential.
 
-# Project Result
-- CNN Accuracy: 96.87%, outperforming FCNN (74.32%).
-- Machine learning models like SVM and Random Forest, utilizing feature extraction techniques (HOG, LBP, LPQ, and Gabor features), outperformed deep learning, with accuracies exceeding 95%.
-- Feature Extraction: Techniques like HOG, LBP, and Gabor significantly boosted machine learning performance.
-- The stacking classifier achieved the best performance, with an accuracy of 99.37%, demonstrating the effectiveness of combining models for robust predictions.
-- CNN outperformed FCNN in image classification due to its ability to automatically extract spatial patterns, but machine learning models still surpassed deep learning in this project due to effective feature extraction.
-- Hyperparameter Tuning: Enhanced model accuracy by optimizing learning rates and hidden units.professionals in making informed decisions regarding property values.
+## Dataset Overview
 
-# Conlusion
-The project successfully classified vehicles, with machine learning models like SVM and Random Forest surpassing 95% accuracy. The stacking model achieved 99.37%, while CNN reached 96.87%. Hyperparameter tuning improved model performance, and transfer learning could enhance future deep learning results.
+- Source: [Mendeley Data – Vehicle Classification Dataset](https://data.mendeley.com/datasets/htsngg9tpc/3)
+- Location: Captured at Loei Rajabhat University, Thailand
+- Volume: 4,356 labeled vehicle images
+- Classes: Sedan, Pick-up, SUV, Hatchback, Other (includes motorcycles and vans)
+
+| Vehicle Type | Description                              |
+|--------------|------------------------------------------|
+| Sedan        | Standard passenger vehicles              |
+| Pick-up      | Light-duty trucks                        |
+| SUV          | Sport Utility Vehicles                   |
+| Hatchback    | Compact cars with rear cargo access      |
+| Other        | Includes motorcycles and small vans      |
+
+
+## Executive Summary
+This project demonstrates how handcrafted features such as HOG, LBP, LPQ, and Gabor can be leveraged to outperform deep learning models in small- to medium-scale image datasets. The best-performing model was the Stacking Classifier (Accuracy: 99.37%), followed by KNN (99.00%) and the Voting Classifier (98.60%). CNNs reached 96.87% accuracy, clearly outperforming the Fully Connected Neural Network (74.32%) but falling short of feature-based models due to limited data. Data augmentation (brightness and rotation), stratified K-Fold cross-validation, and hyperparameter tuning significantly enhanced model performance. The results emphasize that in scenarios with limited training data, machine learning paired with strong feature engineering can outperform even deep learning architectures.
+
+## Project Workflow
+### Data Import and Feature Engineering
+- Imported libraries: NumPy, OpenCV, Skimage, Pandas, Scikit-learn
+- Implemented five feature extraction techniques:
+  - HOG: Captured edge orientations using gradient histograms
+  - LBP: Extracted local texture patterns from pixel neighborhoods
+  - LPQ: Generated blur-invariant phase-based descriptors
+  - Gabor: Applied multi-scale frequency and orientation filters for texture recognition
+  - Color Histogram: Represented image color distributions
+
+### Data Preprocessing
+- Resized all images to 256×256 pixels
+- Converted images to grayscale to ensure consistency during feature extraction
+- Created image augmentation functions:
+  - Brightness adjustment (range: 0.5 to 2.0)
+  - Random rotation between -15° and 15°
+- Applied augmentation only to training data to avoid test leakage
+
+### Dataset Splitting
+- Performed an 80/20 train-test split
+- Used Stratified K-Fold cross-validation (k = 10) to maintain class balance
+- Augmentation effectively doubled the size of the training set
+
+### Model Building and Tuning
+
+### Machine Learning
+- Trained the following models using handcrafted features:
+  - Support Vector Machine (SVM)
+  - K-Nearest Neighbors (KNN)
+  - Random Forest (RF)
+- Optimized hyperparameters using GridSearchCV with 10-fold cross-validation:
+  - SVM: C values, kernel types
+  - KNN: Number of neighbors, weights, distance metrics
+  - RF: Number of estimators, max depth, split criteria
+- Constructed ensemble models:
+  - Voting Classifier for majority-based predictions
+  - Stacking Classifier using a meta-model to combine base learners
+
+### Deep Learning
+- CNN:
+  - Three Conv2D layers with MaxPooling and ReLU activation
+  - Dense output layer for final classification
+  - Hyperparameters tuned: optimizer type, dropout rate, learning rate
+- FCNN:
+  - Fully connected neural network with multiple dense layers
+  - Tuned for optimal learning rate and number of hidden units
+- Applied Dropout and BatchNormalization to reduce overfitting and stabilize training
+  
+## Highlights
+
+- Feature-based machine learning models outperformed deep learning approaches  
+  Models using HOG, LPQ, and LBP achieved over 98% accuracy, outperforming CNNs due to effective manual feature extraction.
+
+- CNNs remained competitive  
+  Despite the limited dataset size, CNNs achieved 96.87% accuracy by learning local and global spatial hierarchies.
+
+- Stacking was the best overall model  
+  Achieved 99.37% accuracy with consistent sensitivity and specificity, making it the most reliable approach.
+
+- KNN combined simplicity with high performance  
+  Delivered 99% accuracy when paired with robust feature sets, showcasing its effectiveness in well-engineered pipelines.
+
+- FCNN showed limitations  
+  Struggled due to lack of spatial awareness, which CNNs handled better through convolutional learning mechanisms.
+
+---
+
+## 🧠 Key Takeaways
+
+- Feature engineering is critical  
+  For small to moderately sized datasets, handcrafted features like HOG, Gabor, and LBP significantly boost performance.
+
+- Ensemble models shine  
+  Voting and Stacking classifiers leverage multiple base learners, improving both accuracy and model stability.
+
+- CNNs require more data  
+  Deep learning approaches can rival or surpass traditional models when enough data and augmentation are available, but tend to underperform on limited datasets.
+
+- Augmentation and cross-validation improve generalization  
+  Techniques like brightness adjustments, random rotations, and stratified K-Fold splitting helped mitigate overfitting.
+
+- Model selection depends on data structure  
+  CNNs are well-suited for large-scale, raw image datasets, while traditional ML models perform best when paired with meaningful, engineered features.
+
+
 
 # Contact
 For any questions or inquiries, please contact evitanegara@gmail.com 
